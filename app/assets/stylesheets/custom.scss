@@ -49,3 +49,7 @@ body {
   margin: 0 0.5rem .5rem;
 }
 
+.card::-webkit-scrollbar {
+  width: 0;
+}
+
