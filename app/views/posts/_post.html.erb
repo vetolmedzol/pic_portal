@@ -6,7 +6,7 @@
           <% if post.user.avatar.attached? %>
             <%= image_tag post.user.avatar, class: "img-thumbnail rounded-circle", style: "width: 10%" %>
           <% else %>
-            <i class="fa-solid fa-user-astronaut fa-xl"></i>
+            <%= image_tag 'default_avatar.png', class: "img-thumbnail rounded-circle", style: "width: 10%" %>
           <% end %>
           <span class="fw-bold mx-2">
             <%= post.user.nickname %>
