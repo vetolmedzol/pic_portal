@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.2.0'
+gem "font-awesome-sass", "~> 6.5.1"
 gem 'devise'
 
 group :development, :test do
