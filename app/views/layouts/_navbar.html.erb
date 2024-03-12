@@ -2,32 +2,30 @@
   <div class="container-fluid w-75 ">
     <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag 'logo.png', width: '40rem' %>
+      <%= image_tag 'pp_logo.png', width: '100rem' %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="d-flex">
       <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
         <form class="d-flex" role="search">
           <input class="form-control me-2 border-0" type="search" placeholder="Search" aria-label="Search" , style="background: #efefef">
         </form>
       </div>
-
       <div class="navbar-collapse gap-4 ms-5">
         <%= link_to root_path, class: 'text-dark' do %>
           <i class="fa-sharp fa-solid fa-house-flag fa-xl"></i>
         <% end %>
         <i class="fa-sharp fa-solid fa-envelope fa-xl"></i>
-        <%= link_to new_post_path, class: 'text-dark' do %>
+        <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <i class="fa-sharp fa-solid fa-circle-plus fa-xl"></i>
-        <% end %>
+        </a>
         <i class="fa-sharp fa-solid fa-compass fa-xl"></i>
         <i class="fa-sharp fa-solid fa-heart fa-xl"></i>
         <%= link_to posts_path, class: 'text-dark' do %>
           <i class="fa-regular fa-newspaper fa-xl"></i>
         <% end %>
-
         <div class="dropdown">
           <a class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <% if current_user && current_user.avatar.attached? %>
@@ -45,3 +43,5 @@
     </div>
   </div>
 </nav>
+
+<%= render 'posts/form', post: Post.new %>
